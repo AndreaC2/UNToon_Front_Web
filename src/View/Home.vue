@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="aux">
     <NavBar></NavBar>
     <SearchBar></SearchBar>
     <ComicsHome></ComicsHome>
@@ -24,3 +24,9 @@ export default {
 };
 </script>
 
+<style scoped>
+.aux{
+  background-color: var(--color_beige);
+  min-height: 900px;
+}
+</style>
