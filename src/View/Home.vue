@@ -25,6 +25,11 @@ export default {
 </script>
 
 <style scoped>
+body{
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
 .aux{
   background-color: var(--color_beige);
   min-height: 900px;

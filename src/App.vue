@@ -28,5 +28,6 @@ export default {
 }
 body {
   margin: 0%;
+  background-color: var(--color_beige);
 }
 </style>

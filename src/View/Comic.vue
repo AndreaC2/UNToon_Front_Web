@@ -1,11 +1,15 @@
 <template>
   <div>
     <NavBar></NavBar>
+    <div class="visor">
+      <VisorPDF></VisorPDF>
+    </div>
   </div>
 </template>
 
 <script>
 import NavBar from "../components/NavBar.vue";
+import VisorPDF from "../components/VisorPDF.vue"
 
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,19 +17,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default {
   name: "Comic",
   components: {
-    NavBar
+    NavBar,
+    VisorPDF
   },
-};
+}
 </script>
 
 <style>
-* {
-  --color_red: #b32d43;
-  --color_beige: #f2e8cf;
-  --color_green_1: #94b43b;
-  --color_green_2: #a7d757;
-}
-body {
-  margin: 0%;
+.visor{
+  max-width: 80%;
 }
 </style>

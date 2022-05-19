@@ -1,8 +1,10 @@
 <template>
   <div class="Contenedor">
-    <CardComic></CardComic>
-    <CardComic></CardComic>
-    <CardComic></CardComic>
+    <ul class="lista">
+      <li v-for="item in comics" :key="item">
+        <CardComic :comic="item" />
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -14,6 +16,11 @@ export default {
   name: "ComicsHome",
   components: {
     CardComic,
+  },
+  data() {
+    return {
+      comics: [],
+    };
   },
   methods: {
     comicsRecived() {
@@ -27,7 +34,8 @@ export default {
           /*  { query: "mutation{signIn(user:{username:\"a\",password:\"1\"})}"} */
         )
         .then((response) => {
-          console.log(response);
+          console.log(response.data.data.allComics);
+          this.comics = response.data.data.allComics;
         });
     },
   },
@@ -44,9 +52,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .Contenedor {
-  flex-direction: row;
   display: flex;
-  justify-content: space-evenly;
-  padding: 20px 0px 50px 0px;
+  justify-items: center;
+  justify-self: center;
+  max-width: 80%;
+  padding: 50px;
+  margin-left: 240px;
+}
+.lista {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
 }
 </style>
