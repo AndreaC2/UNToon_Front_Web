@@ -1,8 +1,8 @@
 <template>
-  <div class="card">
-    <img src="../assets/SearchRed.png" class="card-img-top" alt="..." />
+  <div class="card"  @click="enviarComic()">
+    <img :src="comic.imagen" class="card-img-top" alt="..." />
     <div class="card-body">
-      <p class="card-text">Mi comic</p>
+      <p class="card-text">{{ comic.nombre }}</p>
     </div>
   </div>
 </template>
@@ -10,8 +10,12 @@
 <script>
 export default {
   name: "CardComic",
-  /* props: {
-  } */
+  props: ["comic"],
+  methods: {
+    enviarComic() {
+       this.$router.push({ path: 'Comic'})
+    },
+  },
 };
 </script>
 
@@ -29,11 +33,12 @@ export default {
   max-width: 300px;
   max-height: 250px;
   cursor: pointer;
+  margin: 50px;
 }
 .card-img-top {
   object-fit: cover;
   min-width: 298px;
-  min-height: 200px;
+  min-height: 198px;
   border-radius: 25px 25px 0px 0px;
 }
 </style>

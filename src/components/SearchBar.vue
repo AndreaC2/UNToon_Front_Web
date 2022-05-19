@@ -27,6 +27,7 @@ export default {
 <style scoped>
 body {
   background: #ffffff;
+  margin: 0;
 }
 .form {
   margin: 50px;

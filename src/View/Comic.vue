@@ -1,31 +1,43 @@
 <template>
   <div>
     <NavBar></NavBar>
+    <div class="comic">
+      <h1 class="title"></h1>
+      <div class="visor">
+        <VisorPDF></VisorPDF>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import NavBar from "../components/NavBar.vue";
+import VisorPDF from "../components/VisorPDF.vue";
 
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default {
   name: "Comic",
+  props: ["comic"],
   components: {
-    NavBar
+    NavBar,
+    VisorPDF,
   },
 };
 </script>
 
-<style>
-* {
-  --color_red: #b32d43;
-  --color_beige: #f2e8cf;
-  --color_green_1: #94b43b;
-  --color_green_2: #a7d757;
+<style scoped>
+.comic {
+  display: block;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
-body {
-  margin: 0%;
-}
+.title{
+  color: var(--color_red);
+  margin: 5%;
+  font-weight: bold;
+  font-size: 24px;
+  }
 </style>
