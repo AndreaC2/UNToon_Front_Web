@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="aux">
     <NavBar></NavBar>
     <SearchBar></SearchBar>
     <ComicsHome></ComicsHome>
@@ -10,6 +10,7 @@
 import NavBar from "../components/NavBar.vue";
 import SearchBar from "../components/SearchBar.vue";
 import ComicsHome from "../components/ComicsHome.vue"
+
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -23,3 +24,9 @@ export default {
 };
 </script>
 
+<style scoped>
+.aux{
+  background-color: var(--color_beige);
+  min-height: 900px;
+}
+</style>
