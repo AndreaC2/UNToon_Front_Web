@@ -1,9 +1,9 @@
 <template>
   <div>
-    <router-link to="/"></router-link>
+    <router-link to="/">a</router-link>
     <router-link to="/Profile"></router-link>
-    <router-link to="/Login"></router-link>
-    <router-link to="/Comic"></router-link>
+    <router-link to="/Login">b</router-link>
+    <router-link to="/Comic">c</router-link>
     <router-view />
   </div>
 </template>

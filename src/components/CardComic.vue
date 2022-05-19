@@ -13,11 +13,8 @@ export default {
   props: ["comic"],
   methods: {
     enviarComic() {
-       this.$router.push({ path: 'Comic' })
+       this.$router.push({ path: '/Comic'})
     },
-    usarImagen(){
-      
-    }
   },
 };
 </script>
