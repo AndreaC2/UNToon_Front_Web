@@ -10,6 +10,7 @@
 import NavBar from "../components/NavBar.vue";
 import SearchBar from "../components/SearchBar.vue";
 import ComicsHome from "../components/ComicsHome.vue"
+
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 

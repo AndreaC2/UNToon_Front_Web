@@ -1,15 +1,15 @@
 <template>
-  <div class="navbar">
-    <div class="aux">
-      <img class="img" src="../assets/LogoBeige.png" />
+  <div class="card">
+    <img src="../assets/SearchRed.png" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <p class="card-text">Mi comic</p>
     </div>
-    <img class="img" src="../assets/UserBeige.png" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "NavBar",
+  name: "CardComic",
   /* props: {
   } */
 };
@@ -17,22 +17,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.navbar {
-  height: 65px;
-  background-color: var(--color_green_1);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.card-body {
+  background-color: var(--color_red);
+  border-radius: 0px 0px 25px 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
 }
-
-.aux {
-  width: 40%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.card {
+  border-radius: 25px;
+  max-width: 300px;
+  max-height: 250px;
+  cursor: pointer;
 }
-
-.img {
-  height: 55px;
+.card-img-top {
+  object-fit: cover;
+  min-width: 298px;
+  min-height: 200px;
+  border-radius: 25px 25px 0px 0px;
 }
 </style>
