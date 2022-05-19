@@ -1,26 +1,31 @@
 <template>
-  <NavBar></NavBar>
+  <div>
+    <NavBar></NavBar>
+    <SearchBar></SearchBar>
+  </div>
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue'
+import NavBar from "./components/NavBar.vue";
+import SearchBar from "./components/SearchBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    NavBar
-  }
-}
+    NavBar,
+    SearchBar,
+  },
+};
 </script>
 
 <style>
-*{
-  --color_red: #B32D43;
-  --color_beige: #F2E8CF;
-  --color_green_1: #94B43B;
-  --color_green_2: #A7D757;
+* {
+  --color_red: #b32d43;
+  --color_beige: #f2e8cf;
+  --color_green_1: #94b43b;
+  --color_green_2: #a7d757;
 }
-body{
+body {
   margin: 0%;
 }
 </style>
