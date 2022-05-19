@@ -2,7 +2,7 @@
   <div>
     <NavBar></NavBar>
     <div class="comic">
-      <h1 class="title">{{comic.nombre}}</h1>
+      <h1 class="title"></h1>
       <div class="visor">
         <VisorPDF></VisorPDF>
       </div>
@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .comic {
   display: block;
   max-width: 80%;

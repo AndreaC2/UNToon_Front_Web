@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from "../View/Home.vue"
 import NotFound from "../View/NotFound.vue"
+import Comic from "../View/Comic"
+import Login from "../View/Login"
 
 const routes = [
   {
@@ -14,7 +16,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../View/Login.vue')
+    component: Login,
   },
   {
     path: '/Comic',
@@ -22,7 +24,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../View/Comic.vue')
+    component: Comic,
   },
   {
     path: '/Profile',

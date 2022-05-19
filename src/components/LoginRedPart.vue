@@ -2,6 +2,7 @@
   <div class="Contenedor">
     <div class="user">
       <input
+        v-model="login.username"
         class="userinput"
         type="text"
         placeholder="Usuario"
@@ -9,6 +10,7 @@
     </div>
     <div class="user">
       <input
+        v-model="login.password"
         class="userinput"
         type="password"
         placeholder="Contraseña"
@@ -33,24 +35,35 @@ export default {
   components: {},
   data() {
     return {
-      comics: [],
+      login: {
+        username: "",
+        password: "",
+      },
     };
   },
   methods: {
     comicsRecived() {
+      var consulta = 'mutation{signIn(user:{username:"' + this.login.username + '",password:"'  + this.login.password + '"})}'
+      var otra = "'" + consulta + "'"
+      console.log(otra)
       axios
         .post("https://93dc-190-25-67-52.ngrok.io/graphql", {
           query: 'mutation{signIn(user:{username:"a",password:"1"})}',
         })
         .then((response) => {
-          console.log(response.data.data.allComics);
-          this.comics = response.data.data.allComics;
-        });
+          console.log(response.data.data);
+          if (response.data.data == null) {
+            console.log("no se puede iniciar sesion");
+          } else {
+            console.log(response.data.data);
+            localStorage.setItem("token", "Tocken");
+          }
+        })
+        .then(function () {});
     },
-  },
-  mounted: function () {
-    this.comicsRecived();
-    console.log("algooo");
+    iniciarsesion() {
+      this.comicsRecived();
+    },
   },
 
   /* props: {
@@ -87,7 +100,7 @@ export default {
   margin-top: 30px;
 }
 .user {
- display: flex;
+  display: flex;
   min-width: 550px;
   min-height: 55.11px;
   background: #ffffff;

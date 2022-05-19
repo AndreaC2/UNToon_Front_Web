@@ -17,6 +17,7 @@ import VuePdfEmbed from 'vue-pdf-embed'
 // import VuePdfEmbed from 'vue-pdf-embed/dist/vue2-pdf-embed'
 
 export default {
+  name: "VisorPDF",
   components: {
     VuePdfEmbed,
   },
