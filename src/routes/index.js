@@ -8,7 +8,10 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    /* meta: {
+      requiresAuth: true
+    }  */
   },
   {
     path: '/Login',
@@ -25,6 +28,9 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: Comic,
+   /*  meta: {
+      requiresAuth: true
+    }  */
   },
   {
     path: '/Profile',
@@ -33,9 +39,16 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../View/Profile.vue'),
-    /* meta: {
-      requiresAuth: true
-    } */
+    /*   */
+  },
+  {
+    path: '/Consume',
+    name: 'Consume',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../View/Consume.vue'),
+    /*   */
   },
   {
     path: "/:catchAll(.*)",
