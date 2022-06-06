@@ -4,6 +4,7 @@
     <router-link to="/Profile"></router-link>
     <router-link to="/Login"></router-link>
     <router-link to="/Comic"></router-link>
+    <router-link to="/Consume"></router-link>
     <router-view />
   </div>
 </template>

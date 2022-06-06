@@ -48,7 +48,7 @@ export default {
       console.log(otra)
       axios
         .post("https://93dc-190-25-67-52.ngrok.io/graphql", {
-          query: 'mutation{signIn(user:{username:"a",password:"1"})}',
+          query: { query: "mutation{signIn(user:{username:\"a\",password:\"1\"})}"},
         })
         .then((response) => {
           console.log(response.data.data);
@@ -57,6 +57,7 @@ export default {
           } else {
             console.log(response.data.data);
             localStorage.setItem("token", "Tocken");
+             this.$router.push({ path: 'Home'})
           }
         })
         .then(function () {});

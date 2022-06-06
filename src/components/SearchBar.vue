@@ -27,10 +27,13 @@ export default {
 <style scoped>
 body {
   background: #ffffff;
-  margin: 0;
 }
+
 .form {
   margin: 50px;
+}
+.row {
+  margin: 0;
 }
 .form .fa-search {
   position: absolute;
@@ -44,6 +47,7 @@ body {
   border-radius: 10px;
   border-width: 2px;
   border-color: var(--color_green_2);
+  margin: 0;
 }
 
 .form-input:focus {
