@@ -43,12 +43,11 @@ export default {
   },
   methods: {
     iniciarsesion() {
-      var consulta = 'mutation{signIn(user:{username:"' + this.login.username + '",password:"'  + this.login.password + '"})}'
-      var otra = "'" + consulta + "'"
-      console.log(otra)
+      var consulta = "mutation{signIn(user:{username:\"" + this.login.username + "\",password:\""  + this.login.password + "\"}){token}}"
       axios
-        .post("https://674e-190-24-109-109.ngrok.io/graphql", {
-          "query": "mutation{signIn(user:{username:\"ab\",password:\"1\"}){token}}"
+        .post("https://a092-190-24-109-109.ngrok.io/graphql", {
+          //"query": "mutation{signIn(user:{username:\"ab\",password:\"1\"}){token}}"
+          "query" : consulta
         })
         .then((response) => {
           console.log(response);

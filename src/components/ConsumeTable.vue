@@ -51,7 +51,7 @@ export default {
   methods: {
     comunitiesRecived() {
       axios.post(
-        "https://93dc-190-25-67-52.ngrok.io/graphql",
+        "https://a092-190-24-109-109.ngrok.io",
         {
           query:
             "query{allComics{idcomic nombre autor fecha direccion etiquetas pdf imagen descripcion }}",
