@@ -21,7 +21,7 @@
         class="Ingresar"
         @click="iniciarsesion"
         type="button"
-        value="Ingresar Sesion"
+        value="Ingresar"
       />
     </div>
   </div>
@@ -42,29 +42,26 @@ export default {
     };
   },
   methods: {
-    comicsRecived() {
+    iniciarsesion() {
       var consulta = 'mutation{signIn(user:{username:"' + this.login.username + '",password:"'  + this.login.password + '"})}'
       var otra = "'" + consulta + "'"
       console.log(otra)
       axios
-        .post("https://93dc-190-25-67-52.ngrok.io/graphql", {
-          query: { query: "mutation{signIn(user:{username:\"a\",password:\"1\"})}"},
+        .post("https://674e-190-24-109-109.ngrok.io/graphql", {
+          "query": "mutation{signIn(user:{username:\"ab\",password:\"1\"}){token}}"
         })
         .then((response) => {
-          console.log(response.data.data);
+          console.log(response);
           if (response.data.data == null) {
             console.log("no se puede iniciar sesion");
           } else {
             console.log(response.data.data);
-            localStorage.setItem("token", "Tocken");
-             this.$router.push({ path: 'Home'})
+            localStorage.setItem("token", response.data.data.signIn.token);
+            this.$router.push({ path: '/'})
           }
         })
         .then(function () {});
-    },
-    iniciarsesion() {
-      this.comicsRecived();
-    },
+    }
   },
 
   /* props: {
