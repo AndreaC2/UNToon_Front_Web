@@ -26,7 +26,7 @@ export default {
     comicsRecived() {
       axios
         .post(
-          "https://93dc-190-25-67-52.ngrok.io/graphql",
+          "https://674e-190-24-109-109.ngrok.io/graphql",
           {
             query:
               "query{allComics{idcomic nombre autor fecha direccion etiquetas pdf imagen descripcion }}",
