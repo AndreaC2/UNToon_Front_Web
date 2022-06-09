@@ -10,16 +10,14 @@
       <table class="table bordered striped">
         <thead>
           <tr>
-            <th>String1</th>
-            <th>String2</th>
-            <th>String3</th>
+            <th>id</th>
+            <th>nombre</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="comunity in comunities" v-bind:key="comunity">
-            <td>{{ comunity.nombre }}</td>
-            <td>{{ comunity.descripcion }}</td>
-            <td>{{ comunity.ultimo}}</td>
+            <td>{{ comunity.id }}</td>
+            <td>{{ comunity.Nombre }}</td>
           </tr>
         </tbody>
       </table>
@@ -34,34 +32,26 @@ export default {
   components: {},
   data() {
     return {
-      comunities: [
-        {
-          nombre: "un nombre",
-          descripcion: "una descripcion",
-          ultimo: "holaa",
-        },
-        {
-          nombre: "un nombre 2",
-          descripcion: "una descripcion",
-          ultimo: "holaa",
-        },
-      ],
+      headers: ["id", "Nombre"],
+      comunities: [{}],
     };
   },
   methods: {
     comunitiesRecived() {
-      axios.post(
-        "https://a092-190-24-109-109.ngrok.io",
-        {
-          query:
-            "query{allComics{idcomic nombre autor fecha direccion etiquetas pdf imagen descripcion }}",
-        }
-        /*  { query: "mutation{signIn(user:{username:\"a\",password:\"1\"})}"} */
-      );
-      /*.then((response) => {
-          //console.log(response.data.data.allComics);
-          //this.comics = response.data.data.allComics;
-        });*/
+      Object.assign(this.$data, this.$options.data());
+      for (var i = 1; i <= 3; i++) {
+        var res = axios
+          .get("https://9817-186-118-24-19.ngrok.io/comunity/" + i)
+          .catch((error) => {
+            if (error.response) {
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+            }
+          })
+        console.log(res);
+        this.comunities.push({ id: i, Nombre: res });
+      }
     },
   },
 };
