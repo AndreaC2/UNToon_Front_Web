@@ -40,17 +40,20 @@ export default {
     comunitiesRecived() {
       Object.assign(this.$data, this.$options.data());
       for (var i = 1; i <= 3; i++) {
-        var res = axios
-          .get("https://9817-186-118-24-19.ngrok.io/comunity/" + i)
+        axios
+          .get("https://9817-186-118-24-19.ngrok.io/comunity/" + i + "/")
+          .then((response) => {
+            console.log(response);
+            this.$data.comunities.push({id: response.data.id, Nombre: response.data.comunidad}); 
+          })
           .catch((error) => {
             if (error.response) {
+              console.log(error)
               console.log(error.response.data);
               console.log(error.response.status);
               console.log(error.response.headers);
             }
-          })
-        console.log(res);
-        this.comunities.push({ id: i, Nombre: res });
+          }); 
       }
     },
   },

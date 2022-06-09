@@ -49,6 +49,9 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../View/Consume.vue'),
     /*   */
+    meta: {
+      requiresAuth: true
+    }  
   },
   {
     path: "/:catchAll(.*)",
